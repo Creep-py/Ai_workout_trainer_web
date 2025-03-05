@@ -1,0 +1,100 @@
+now i want you to enhance the @BodyCalibration.tsx body calibration process to advance level with the following changes:
+1.after collecting all the data during calibration calculate user's body fat % and bmi and other fitness data that is required for knowing user's body's condition, you can ask any additional data if required along with the height, weight, hip size, chest size and neck size.
+
+2. now i want you to calibrate the user using movenet, so create a calibration program, i am giving you the details below:
+How MoveNet Can Be Used for Calibration
+MoveNet is a lightweight pose estimation model that detects 17 keypoints on the human body. These keypoints can be used to calculate body proportions, joint angles, and other metrics that are essential for calibration. Here's how you can use MoveNet for calibration:
+
+1. Collect Keypoints During Calibration
+During the Body Calibration Page step, ask the user to perform a few standard poses (e.g., standing straight, arms extended, or a simple squat).
+
+Use MoveNet to detect the 17 keypoints for each pose and store the coordinates of these keypoints.
+
+2. Calculate Body Proportions
+Use the keypoints to calculate the user's body proportions, such as:
+
+Arm length (distance between shoulder and wrist keypoints).
+
+Leg length (distance between hip and ankle keypoints).
+
+Torso length (distance between shoulder and hip keypoints).
+
+These proportions can be used to normalize joint angles and improve pose estimation accuracy.
+
+3. Measure Joint Angles
+Calculate the joint angles for standard poses (e.g., elbow angle when arms are extended, knee angle during a squat).
+
+Store these angles as a baseline for the user's flexibility and range of motion.
+
+4. Adjust Pose Estimation Thresholds
+Use the collected data to adjust the thresholds for posture correction.
+
+For example, if a user has limited flexibility, the app can allow a slightly wider range of motion for certain exercises (e.g., squats or lunges) before providing feedback.
+
+5. Store Calibration Data
+Store the calibration data (keypoints, body proportions, joint angles) in the user's profile.
+
+Use this data to personalize workout routines and improve the accuracy of real-time feedback.
+
+Example Calibration Workflow
+Step 1: Standing Pose
+
+Ask the user to stand straight with arms at their sides.
+
+Use MoveNet to detect keypoints and calculate:
+
+Shoulder width (distance between left and right shoulder keypoints).
+
+Arm length (distance between shoulder and wrist keypoints).
+
+Torso length (distance between shoulder and hip keypoints).
+
+Step 2: Extended Arms Pose
+
+Ask the user to extend their arms horizontally.
+
+Use MoveNet to detect keypoints and calculate:
+
+Elbow angle (to measure flexibility).
+
+Shoulder angle (to detect any asymmetry).
+
+Step 3: Squat Pose
+
+Ask the user to perform a basic squat.
+
+Use MoveNet to detect keypoints and calculate:
+
+Knee angle (to measure range of motion).
+
+Hip angle (to assess posture).
+
+Step 4: Store and Use Data
+
+Store the calculated proportions and angles in the user's profile.
+
+Use this data to adjust workout recommendations and posture correction thresholds.
+
+Do You Need Something Else?
+While MoveNet is excellent for detecting keypoints and calculating basic metrics, you might need additional tools or techniques for more advanced calibration:
+
+1. Depth Sensing (Optional)
+MoveNet works in 2D, so it cannot measure depth or true 3D joint angles.
+
+If you need 3D calibration, consider integrating a depth sensor (e.g., Intel RealSense) or a 3D pose estimation model like MediaPipe BlazePose 3D.
+
+2. Flexibility Tests
+For more accurate calibration, you can include flexibility tests (e.g., touching toes, reaching overhead) and use MoveNet to measure joint angles during these tests.
+
+3. Wearable Sensors (Optional)
+If you need highly accurate joint angle measurements, consider integrating wearable sensors (e.g., smartwatches, IMU sensors) to complement MoveNet's data.
+
+4. User Input
+Combine MoveNet's data with user input (e.g., height, weight, fitness level) to further personalize the calibration.
+
+make sure ui interface theme should be same, you can make it better and with smoother animations and effects
+
+all this should be done while user is calibrating himself during registration(sign up) process
+
+while doing pose calibration, tell the user to stand in a partcular pose and show proper joint lines also make the whole calibration step as a completly differently page than the registration page,  and in body calibration using movenet, use code of @WorkoutTrainerApp(old).tsx  for the pose making and feedback system to make the user stand in a particular pose for calibration, and tell him using feedback system that what he is lacking in making that particular pose
+ explain the pose in more detailed way, make a black screen beside the trainee's view in which show the joint lines of the correct pose which trainee need to make during calibration, also make the feedback system more accurate telling what exactly needs to do to correct the pse(eg. bend your knee more, lift your hand, stand properly infront of the camera, move back, etc, make this whole, make the trainee to do a pose using the cooridnates, angles of his joints.

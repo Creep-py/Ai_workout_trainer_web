@@ -1,0 +1,258 @@
+/* WorkoutTrainerApp.css */
+
+/* Custom scrollbar styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(45, 55, 72, 0.3);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(56, 178, 172, 0.5);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 178, 172, 0.7);
+}
+
+/* Dropdown menu styles */
+.dropdown-container {
+  position: relative;
+  z-index: 9999;
+}
+
+.dropdown-menu {
+  position: absolute;
+  z-index: 9999;
+  transform: none;
+  will-change: auto;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+  animation: fadeIn 0.15s ease-out forwards;
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Neon text effects */
+.neon-text {
+  text-shadow: 0 0 10px rgba(56, 178, 172, 0.7), 0 0 20px rgba(56, 178, 172, 0.5);
+}
+
+.neon-blue-text {
+  color: #38B2AC;
+  text-shadow: 0 0 10px rgba(56, 178, 172, 0.7), 0 0 20px rgba(56, 178, 172, 0.5);
+}
+
+.neon-purple-text {
+  color: #9F7AEA;
+  text-shadow: 0 0 10px rgba(159, 122, 234, 0.7), 0 0 20px rgba(159, 122, 234, 0.5);
+}
+
+.neon-green-text {
+  color: #48BB78;
+  text-shadow: 0 0 10px rgba(72, 187, 120, 0.7), 0 0 20px rgba(72, 187, 120, 0.5);
+}
+
+.neon-red-text {
+  color: #F56565;
+  text-shadow: 0 0 10px rgba(245, 101, 101, 0.7), 0 0 20px rgba(245, 101, 101, 0.5);
+}
+
+/* Gradient text effects */
+.gradient-text-blue {
+  background: linear-gradient(to right, #38B2AC, #4299E1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-text-purple {
+  background: linear-gradient(to right, #9F7AEA, #667EEA);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Glow effects for buttons */
+.glow-button {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.glow-button:hover {
+  box-shadow: 0 0 15px rgba(56, 178, 172, 0.7);
+}
+
+.glow-button-red {
+  transition: all 0.3s ease;
+}
+
+.glow-button-red:hover {
+  box-shadow: 0 0 15px rgba(245, 101, 101, 0.7);
+}
+
+/* Panel styling */
+.neon-panel {
+  background: linear-gradient(to bottom right, rgba(26, 32, 44, 0.8), rgba(0, 0, 0, 0.9));
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(45, 55, 72, 0.5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Animated pulse effect */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(56, 178, 172, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(56, 178, 172, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(56, 178, 172, 0);
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+/* Posture metrics styling */
+.posture-accuracy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.posture-accuracy-value {
+  font-size: 3.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #38B2AC, #4299E1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(56, 178, 172, 0.5);
+}
+
+.posture-status-correct {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #48BB78;
+  text-shadow: 0 0 10px rgba(72, 187, 120, 0.7), 0 0 20px rgba(72, 187, 120, 0.5);
+}
+
+.posture-status-incorrect {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #F56565;
+  text-shadow: 0 0 10px rgba(245, 101, 101, 0.7), 0 0 20px rgba(245, 101, 101, 0.5);
+}
+
+/* Joint angle progress bars */
+.joint-angle-bar {
+  height: 10px;
+  border-radius: 5px;
+  transition: width 0.5s ease;
+}
+
+.joint-angle-label {
+  font-size: 1.125rem;
+  color: #7ab8ff;
+  font-weight: 500;
+}
+
+.joint-angle-value {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #7ab8ff;
+}
+
+.joint-angle-container {
+  margin-bottom: 1rem;
+}
+
+.joint-angle-progress-container {
+  width: 100%;
+  background-color: #2D3748;
+  border-radius: 9999px;
+  height: 10px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.joint-angle-progress-good {
+  background: linear-gradient(to right, #48BB78, #38B2AC);
+  height: 100%;
+  border-radius: 9999px;
+  box-shadow: 0 0 10px rgba(72, 187, 120, 0.5);
+}
+
+.joint-angle-progress-warning {
+  background: linear-gradient(to right, #ECC94B, #ED8936);
+  height: 100%;
+  border-radius: 9999px;
+  box-shadow: 0 0 10px rgba(236, 201, 75, 0.5);
+}
+
+.joint-angle-progress-error {
+  background: linear-gradient(to right, #F56565, #ED64A6);
+  height: 100%;
+  border-radius: 9999px;
+  box-shadow: 0 0 10px rgba(245, 101, 101, 0.5);
+}
+
+/* Navigation bar styling */
+.navbar-container {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(13, 17, 23, 0.9));
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(45, 55, 72, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.navbar-container.scrolled {
+  background: rgba(0, 0, 0, 0.95);
+  box-shadow: 0 4px 20px rgba(56, 178, 172, 0.1);
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-logo-icon {
+  color: #38B2AC;
+  filter: drop-shadow(0 0 8px rgba(56, 178, 172, 0.5));
+  transition: all 0.3s ease;
+}
+
+.navbar-logo-text {
+  font-weight: 700;
+  background: linear-gradient(to right, #38B2AC, #4299E1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(56, 178, 172, 0.3);
+}
+
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .navbar-controls {
+    gap: 0.5rem;
+  }
+} 

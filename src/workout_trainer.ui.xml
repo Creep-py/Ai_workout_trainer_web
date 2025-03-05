@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1200</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>AI Workout Trainer</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #121826;
+color: #FFFFFF;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="headerFrame">
+      <property name="styleSheet">
+       <string notr="true">background-color: #1A202C;
+border-bottom: 1px solid #2D3748;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="titleLabel">
+         <property name="styleSheet">
+          <string notr="true">font-size: 24px;
+font-weight: bold;
+color: #38B2AC;</string>
+         </property>
+         <property name="text">
+          <string>AI Workout Trainer</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QComboBox" name="exerciseComboBox">
+         <property name="styleSheet">
+          <string notr="true">background-color: #1A202C;
+color: #FFFFFF;
+border: 1px solid #2D3748;
+border-radius: 4px;
+padding: 8px;
+min-width: 150px;</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>Squats</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Push-ups</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Lunges</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="contentWidget" native="true">
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="leftMargin">
+        <number>16</number>
+       </property>
+       <property name="topMargin">
+        <number>16</number>
+       </property>
+       <property name="rightMargin">
+        <number>16</number>
+       </property>
+       <property name="bottomMargin">
+        <number>16</number>
+       </property>
+       <property name="spacing">
+        <number>16</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QFrame" name="trainerFrame">
+         <property name="styleSheet">
+          <string notr="true">background-color: #1A202C;
+border-radius: 8px;
+padding: 16px;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="trainerLayout">
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QPushButton" name="uploadButton">
+            <property name="styleSheet">
+             <string notr="true">background-color: #38B2AC;
+color: #FFFFFF;
+border: none;
+border-radius: 4px;
+padding: 8px 16px;
+font-weight: bold;</string>
+            </property>
+            <property name="text">
+             <string>Click to Upload Trainer Video</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="trainerVideoArea">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>300</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: #0D1117;
+border-radius: 8px;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="trainerVideoLayout">
+             <item>
+              <widget class="QLabel" name="trainerPlaceholder">
+               <property name="styleSheet">
+                <string notr="true">color: #A0AEC0;</string>
+               </property>
+               <property name="text">
+                <string>Trainer Video Preview</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="controlsLayout">
+            <item>
+             <widget class="QPushButton" name="playButton">
+              <property name="styleSheet">
+               <string notr="true">background-color: #38B2AC;
+color: #FFFFFF;
+border: none;
+border-radius: 4px;
+padding: 8px 16px;
+font-weight: bold;</string>
+              </property>
+              <property name="text">
+               <string>Play</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pauseButton">
+              <property name="styleSheet">
+               <string notr="true">background-color: #38B2AC;
+color: #FFFFFF;
+border: none;
+border-radius: 4px;
+padding: 8px 16px;
+font-weight: bold;</string>
+              </property>
+              <property name="text">
+               <string>Pause</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="prevButton">
+              <property name="styleSheet">
+               <string notr="true">background-color: #38B2AC;
+color: #FFFFFF;
+border: none;
+border-radius: 4px;
+padding: 8px 16px;
+font-weight: bold;</string>
+              </property>
+              <property name="text">
+               <string>&lt;&lt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="nextButton">
+              <property name="styleSheet">
+               <string notr="true">background-color: #38B2AC;
+color: #FFFFFF;
+border: none;
+border-radius: 4px;
+padding: 8px 16px;
+font-weight: bold;</string>
+              </property>
+              <property name="text">
+               <string>&gt;&gt;</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QFrame" name="traineeFrame">
+         <property name="styleSheet">
+          <string notr="true">background-color: #1A202C;
+border-radius: 8px;
+padding: 16px;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="traineeLayout">
+          <item>
+           <widget class="QLabel" name="traineeLabel">
+            <property name="styleSheet">
+             <string notr="true">color: #38B2AC;</string>
+            </property>
+            <property name="text">
+             <string>Position yourself in front of the camera</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="traineeVideoArea">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>300</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: #0D1117;
+border-radius: 8px;</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="traineeVideoLayout">
+             <item>
+              <widget class="QLabel" name="traineePlaceholder">
+               <property name="styleSheet">
+                <string notr="true">color: #A0AEC0;</string>
+               </property>
+               <property name="text">
+                <string>Position yourself in front of the camera</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="resetButton">
+            <property name="styleSheet">
+             <string notr="true">background-color: #38B2AC;
+color: #FFFFFF;
+border: none;
+border-radius: 4px;
+padding: 8px 16px;
+font-weight: bold;</string>
+            </property>
+            <property name="text">
+             <string>Reset</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QFrame" name="postureFrame">
+         <property name="styleSheet">
+          <string notr="true">background-color: #1A202C;
+border-radius: 8px;
+padding: 16px;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="postureLayout">
+          <item>
+           <widget class="QLabel" name="postureTitle">
+            <property name="styleSheet">
+             <string notr="true">font-size: 18px;
+font-weight: bold;</string>
+            </property>
+            <property name="text">
+             <string>Posture Accuracy</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QLabel" name="accuracyValue">
+            <property name="styleSheet">
+             <string notr="true">font-size: 48px;
+font-weight: bold;
+color: #38B2AC;</string>
+            </property>
+            <property name="text">
+             <string>85%</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="statusTitle">
+            <property name="styleSheet">
+             <string notr="true">font-size: 18px;
+font-weight: bold;
+text-align: center;</string>
+            </property>
+            <property name="text">
+             <string>Posture Status</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="statusValue">
+            <property name="styleSheet">
+             <string notr="true">font-size: 24px;
+font-weight: bold;
+color: #48BB78;
+text-align: center;</string>
+            </property>
+            <property name="text">
+             <string>CORRECT</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QFrame" name="anglesFrame">
+         <property name="styleSheet">
+          <string notr="true">background-color: #1A202C;
+border-radius: 8px;
+padding: 16px;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="anglesLayout">
+          <item>
+           <layout class="QHBoxLayout" name="anglesHeader">
+            <item>
+             <widget class="QLabel" name="anglesTitle">
+              <property name="styleSheet">
+               <string notr="true">font-size: 18px;
+font-weight: bold;</string>
+              </property>
+              <property name="text">
+               <string>Joint Angles</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="accuracyTitle">
+              <property name="styleSheet">
+               <string notr="true">font-size: 18px;
+font-weight: bold;</string>
+              </property>
+              <property name="text">
+               <string>Accuracy</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="hipLayout">
+            <item>
+             <widget class="QLabel" name="hipAngleLabel">
+              <property name="text">
+               <string>Hip: 120°</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="hipAccuracyLabel">
+              <property name="text">
+               <string>Hip: 85%</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QProgressBar" name="hipProgressBar">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>10</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QProgressBar {
+    background-color: #2D3748;
+    border-radius: 5px;
+}
+QProgressBar::chunk {
+    background-color: #48BB78;
+    border-radius: 5px;
+}</string>
+            </property>
+            <property name="value">
+             <number>85</number>
+            </property>
+            <property name="textVisible">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="kneeLayout">
+            <item>
+             <widget class="QLabel" name="kneeAngleLabel">
+              <property name="text">
+               <string>Knee: 145°</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="kneeAccuracyLabel">
+              <property name="text">
+               <string>Knee: 45%</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QProgressBar" name="kneeProgressBar">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>10</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QProgressBar {
+    background-color: #2D3748;
+    border-radius: 5px;
+}
+QProgressBar::chunk {
+    background-color: #ECC94B;
+    border-radius: 5px;
+}</string>
+            </property>
+            <property name="value">
+             <number>45</number>
+            </property>
+            <property name="textVisible">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="elbowLayout">
+            <item>
+             <widget class="QLabel" name="elbowAngleLabel">
+              <property name="text">
+               <string>Elbow: 90°</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="elbowAccuracyLabel">
+              <property name="text">
+               <string>Elbow: 65%</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QProgressBar" name="elbowProgressBar">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>10</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QProgressBar {
+    background-color: #2D3748;
+    border-radius: 5px;
+}
+QProgressBar::chunk {
+    background-color: #ECC94B;
+    border-radius: 5px;
+}</string>
+            </property>
+            <property name="value">
+             <number>65</number>
+            </property>
+            <property name="textVisible">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QFrame" name="feedbackFrame">
+         <property name="styleSheet">
+          <string notr="true">background-color: #1A202C;
+border-radius: 8px;
+padding: 16px;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="feedbackLayout">
+          <item>
+           <widget class="QLabel" name="feedbackTitle">
+            <property name="styleSheet">
+             <string notr="true">font-size: 18px;
+font-weight: bold;</string>
+            </property>
+            <property name="text">
+             <string>Posture Feedback</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="feedback1Layout">
+            <item>
+             <widget class="QLabel" name="feedback1Indicator">
+              <property name="styleSheet">
+               <string notr="true">color: #48BB78;
+font-size: 16px;</string>
+              </property>
+              <property name="text">
+               <string>●</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="feedback1Text">
+              <property name="text">
+               <string>Knee angle within optimal range</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="feedback2Layout">
+            <item>
+             <widget class="QLabel" name="feedback2Indicator">
+              <property name="styleSheet">
+               <string notr="true">color: #ECC94B;
+font-size: 16px;</string>
+              </property>
+              <property name="text">
+               <string>●</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="feedback2Text">
+              <property name="text">
+               <string>Slightly adjust hip position</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_7">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="feedback3Layout">
+            <item>
+             <widget class="QLabel" name="feedback3Indicator">
+              <property name="styleSheet">
+               <string notr="true">color: #F56565;
+font-size: 16px;</string>
+              </property>
+              <property name="text">
+               <string>●</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="feedback3Text">
+              <property name="text">
+               <string>Keep your back straight</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_8">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
